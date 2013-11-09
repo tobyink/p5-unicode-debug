@@ -50,6 +50,22 @@ PerlIO::via::UnicodeDebug - debug Unicode input/output
  
  print "Héllò Wörld\n";
 
+Or perhaps in your test suite...
+
+ use strict;
+ use warnings;
+ use utf8;
+ use Test::More;
+ 
+ if (eval { require Unicode::Debug })
+ {
+    my $builder = Test::More->builder;
+    binmode $builder->$_, ':via(UnicodeDebug)'
+       for qw/ output failure_output todo_output /;
+ }
+ 
+ ...;   # Unicode-emitting tests go here
+
 =head1 DESCRIPTION
 
 Passes IO through L<Unicode::Debug>.
