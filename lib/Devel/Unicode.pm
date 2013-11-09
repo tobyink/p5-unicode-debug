@@ -13,7 +13,7 @@ BEGIN
 	$Devel::Unicode::VERSION   = '0.001';
 }
 
-sub DB::DB { 1 }
+*DB::DB = sub { 1 } unless UNIVERSAL::can('DB', 'can') && DB->can('DB');
 
 sub import
 {
