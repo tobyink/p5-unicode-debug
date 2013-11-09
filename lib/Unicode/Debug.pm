@@ -82,10 +82,9 @@ Unicode::Debug - debug Unicode strings
 
 =head1 SYNOPSIS
 
- use 5.010;
  use Unicode::Debug;
  
- say unidebug("Héllò Wörld");
+ print unidebug("Héllò Wörld"), "\n";
 
 =head1 DESCRIPTION
 

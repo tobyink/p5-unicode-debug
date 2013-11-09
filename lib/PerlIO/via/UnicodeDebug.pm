@@ -43,11 +43,10 @@ PerlIO::via::UnicodeDebug - debug Unicode input/output
 
 =head1 SYNOPSIS
 
- use 5.010;
  use Unicode::Debug;
  binmode STDOUT, ':via(UnicodeDebug)' or die $!;
  
- say "Héllò Wörld";
+ print "Héllò Wörld\n";
 
 =head1 DESCRIPTION
 
