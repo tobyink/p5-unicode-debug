@@ -12,4 +12,9 @@
 		item "Drop smart match usage."^^Change;
 		item "General tidy-ups."^^Change;
 		item "Document usage of PerlIO::via::UnicodeDebug with Test::More."^^Documentation;
+		item "Update xt tests."^^Tests;
+		item [
+			a dcs:Documentation, dcs:Tests;
+			label "Document the test suite.";
+		];
 	].
