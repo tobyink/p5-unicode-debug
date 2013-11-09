@@ -1,0 +1,12 @@
+# This file acts as the project's changelog.
+
+`Unicode-Debug 0.001 cpan:TOBYINK`
+	issued       2012-04-26 ;
+	label        "Initial release" .
+
+`Unicode-Debug 0.002 cpan:TOBYINK`
+	issued       2013-11-09 ;
+	changeset [
+		item "use Dist::Inkt"^^Packaging;
+	].
+
