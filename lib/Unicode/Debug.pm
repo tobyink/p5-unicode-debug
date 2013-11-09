@@ -57,7 +57,7 @@ sub _char
 	my $chr = shift;
 	my $ord = ord $chr;
 	
-	return "\\\\" if $chr eq "\\"; 
+	return "\\\\" if $chr eq "\\";
 	
 	if ($Names and my $name = charnames::viacode($ord))
 	{
@@ -78,6 +78,8 @@ __END__
 
 =encoding utf8
 
+=for stopwords non-ASCII/non-printable whitespace
+
 =head1 NAME
 
 Unicode::Debug - debug Unicode strings
@@ -94,7 +96,9 @@ Makes non-ASCII/non-printable characters in a string blindingly obvious.
 
 =head2 Functions
 
-=head3 unidebug
+=over
+
+=item C<< unidebug >>
 
 This function replaces "unusual" characters in strings with a Perl escape
 sequence that will have the same effect. The example in the SYNOPSIS
@@ -105,7 +109,7 @@ outputs this:
 Which characters are considered unusual? Everything outside the range
 \x20 to \x7F. (The \t, \r and \n characters are handled separately.)
 
-To ensure that unidebug is reversible, backslashes in the input are
+To ensure that C<unidebug> is reversible, backslashes in the input are
 doubled in the output.
 
 Called in void context, it modifies the strings passed to it in-place.
@@ -124,10 +128,12 @@ passed to it. Another example:
 Called in scalar context, it acts the same as in list context, but
 only returns the first modified string.
 
-=head3 unidecode
+=item C<< unidecode >>
 
 An alias for C<unidebug>, to use as a drop-in replacement for
 L<Text::Unidecode>.
+
+=back
 
 =head2 Package Variables
 
@@ -150,7 +156,7 @@ False by default.
 =head3 C<< $Unicode::Debug::Names >>
 
 If set to true, will use L<charnames> to show character names for
-substituted characters. "Wörld" becomes:
+substituted characters. C<< "Wörld" >> becomes:
 
  W\N{LATIN SMALL LETTER O WITH DIAERESIS}rld
 
