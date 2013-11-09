@@ -10,7 +10,7 @@ use Unicode::Debug;
 BEGIN
 {
 	$Devel::Unicode::AUTHORITY = 'cpan:TOBYINK';
-	$Devel::Unicode::VERSION   = '0.001';
+	$Devel::Unicode::VERSION   = '0.002';
 }
 
 *DB::DB = sub { 1 } unless UNIVERSAL::can('DB', 'can') && DB->can('DB');

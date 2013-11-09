@@ -10,7 +10,7 @@ use Unicode::Debug 'unidecode';
 BEGIN
 {
 	$PerlIO::via::UnicodeDebug::AUTHORITY = 'cpan:TOBYINK';
-	$PerlIO::via::UnicodeDebug::VERSION   = '0.001';
+	$PerlIO::via::UnicodeDebug::VERSION   = '0.002';
 }
 
 sub PUSHED

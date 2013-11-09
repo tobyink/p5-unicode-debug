@@ -9,7 +9,7 @@ use utf8;
 BEGIN
 {
 	$Unicode::Debug::AUTHORITY = 'cpan:TOBYINK';
-	$Unicode::Debug::VERSION   = '0.001';
+	$Unicode::Debug::VERSION   = '0.002';
 }
 
 use Exporter ();

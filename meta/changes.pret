@@ -7,6 +7,9 @@
 `Unicode-Debug 0.002 cpan:TOBYINK`
 	issued       2013-11-09 ;
 	changeset [
-		item "use Dist::Inkt"^^Packaging;
+		item "use Dist::Inkt."^^Packaging;
+		item "Backport to Perl 5.8.1."^^Change;
+		item "Drop smart match usage."^^Change;
+		item "General tidy-ups."^^Change;
+		item "Document usage of PerlIO::via::UnicodeDebug with Test::More."^^Documentation;
 	].
-
