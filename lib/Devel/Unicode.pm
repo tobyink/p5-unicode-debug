@@ -29,6 +29,10 @@ sub import
 __PACKAGE__
 __END__
 
+=pod
+
+=encoding utf8
+
 =head1 NAME
 
 Devel::Unicode - sugar for setting STDOUT to use PerlIO::via::UnicodeDebug

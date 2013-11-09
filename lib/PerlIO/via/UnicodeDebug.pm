@@ -35,6 +35,8 @@ sub WRITE
 __PACKAGE__
 __END__
 
+=pod
+
 =encoding utf8
 
 =head1 NAME
