@@ -58,12 +58,12 @@ sub _char
 	my $ord = ord $chr;
 	
 	return "\\\\" if $chr eq "\\"; 
-
+	
 	if ($Names and my $name = charnames::viacode($ord))
 	{
 		return sprintf('\N{%s}', $name);
 	}
-
+	
 	sprintf('\x{%04x}', $ord);
 }
 

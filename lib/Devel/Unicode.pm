@@ -15,7 +15,8 @@ BEGIN
 
 sub DB::DB { 1 }
 
-sub import {
+sub import
+{
 	my $class = shift;
 	my $args  = join q(,), @_;
 	
