@@ -1,6 +1,6 @@
 package Unicode::Debug;
 
-use 5.010;
+use 5.008001;
 use strict;
 use warnings;
 use charnames ':full';
@@ -31,6 +31,7 @@ sub unidecode
 	unless (defined wantarray)
 	{
 		s/(\r\n|[^\x20-\x7F])/_char($1)/eg for @_;
+		return;
 	}
 	
 	my @str = map {
@@ -41,9 +42,17 @@ sub unidecode
 	wantarray ? @str : $str[0];
 }
 
+my %wschars = (
+	"\r\n" => "\\r\\n\n",
+	"\r"   => "\\r\n",
+	"\n"   => "\\n\n",
+	"\t"   => "\\t",
+);
+
 sub _char
 {
-	goto \&_ws if $_[0] ~~ ["\r\n", "\r", "\n", "\t"];
+	return $Whitespace ? $wschars{$_[0]} : $_[0]
+		if exists $wschars{$_[0]};
 	
 	my $chr = shift;
 	my $ord = ord $chr;
@@ -55,20 +64,7 @@ sub _char
 		return sprintf('\N{%s}', $name);
 	}
 
-	return sprintf('\x{%04x}', $ord);
-}
-
-sub _ws
-{
-	return $_[0] unless $Whitespace;
-	
-	given ($_[0])
-	{
-		when ("\r\n")  { return "\\r\\n\n" }
-		when ("\n")    { return "\\n\n" }
-		when ("\r")    { return "\\r\n" }
-		when ("\t")    { return "\\t" }
-	}
+	sprintf('\x{%04x}', $ord);
 }
 
 *unidebug = \&unidecode;

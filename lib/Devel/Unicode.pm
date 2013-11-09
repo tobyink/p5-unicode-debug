@@ -1,6 +1,6 @@
 package Devel::Unicode;
 
-use 5.010;
+use 5.008001;
 use strict;
 use warnings;
 use utf8;
