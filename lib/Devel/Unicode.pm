@@ -1,5 +1,10 @@
 package Devel::Unicode;
 
+use 5.010;
+use strict;
+use warnings;
+use utf8;
+
 use Unicode::Debug;
 
 BEGIN

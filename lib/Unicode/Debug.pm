@@ -12,15 +12,16 @@ BEGIN
 	$Unicode::Debug::VERSION   = '0.001';
 }
 
-use base 'Exporter';
-our @EXPORT    = qw(unidebug);
-our @EXPORT_OK = (@EXPORT, qw(unidecode));
+use Exporter ();
+our @ISA         = qw( Exporter );
+our @EXPORT      = qw( unidebug );
+our @EXPORT_OK   = ( @EXPORT, qw(unidecode) );
 our %EXPORT_TAGS = (
 	default  => \@EXPORT,
 	standard => \@EXPORT,
 	all      => \@EXPORT_OK,
 	nothing  => [],
-	);
+);
 
 our $Whitespace = 0;
 our $Names      = 0;
